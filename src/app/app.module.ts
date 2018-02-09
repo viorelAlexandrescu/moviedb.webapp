@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+﻿import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -31,4 +31,5 @@ import { appRoutes } from './app.routes';
   providers: [MovieService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
