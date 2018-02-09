@@ -10,16 +10,7 @@ import { AccountComponent } from './components/account/account.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MovieService } from './services/movies.service';
 
-export const appRoutes: Routes = [
-  { path: 'home', component: HomeComponent },
-  {path: 'discussions', component: DiscussionsComponent},
-  {path: 'account', component: AccountComponent },
-  { path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  { path: '**', component: PageNotFoundComponent }
-];
+import { appRoutes } from './app.routes';
 
 @NgModule({
   declarations: [
