@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { DetailsComponent } from './components/details/details.component';
 import { MovieaddComponent } from './components/movieadd/movieadd.component';
 import { ReviewComponent } from './components/review/review.component';
+import { DiscussionDetailComponent } from './components/discussion-detail/discussion-detail.component';
 
 export const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -14,6 +15,7 @@ export const appRoutes: Routes = [
   { path: 'movieadd', component: MovieaddComponent },
   { path: 'review/:id', component: ReviewComponent },
   { path: 'detail/:id', component: DetailsComponent },
+  { path: 'discussions-details/:id', component: DiscussionDetailComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'
