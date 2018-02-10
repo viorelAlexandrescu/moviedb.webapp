@@ -13,6 +13,7 @@ export class DiscussionDetailComponent implements OnInit {
 
   @Input() discussion: Discussion;
   comment: string;
+  isAdding: boolean;
 
   constructor(
     private userService: UserService,
@@ -27,6 +28,8 @@ export class DiscussionDetailComponent implements OnInit {
           const d = data as any;
           this.discussion = d.discussion;
         });
+
+    this.isAdding = false;
   }
 
   addComment() {
@@ -39,5 +42,14 @@ export class DiscussionDetailComponent implements OnInit {
                 this.discussion = d.discussion;
               });
         });
+  }
+
+  show() {
+    this.isAdding = true;
+  }
+
+  cancel() {
+    this.comment = null;
+    this.isAdding = false;
   }
 }

@@ -5,3 +5,11 @@
     <p>{{comm.comment}}</p>
   </span>
 </ol>
+
+<button *ngIf="!isAdding" (click)="show">Start a discussion</button>
+<div *ngIf="isAdding">
+  <input [(ngModel)]="comment" name="comment" placeholder="Your comment">
+  <button (click)="addComment()">POST!</button>
+  <button (click)="cancel()">Cancel</button>
+</div>
+
