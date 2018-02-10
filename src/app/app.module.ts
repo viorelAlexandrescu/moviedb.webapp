@@ -16,8 +16,8 @@ import { appRoutes } from './app.routes';
 import { DetailsComponent } from './components/details/details.component';
 import { MovieaddComponent } from './components/movieadd/movieadd.component';
 import { UserService } from './services/user.service';
-import { ReviewComponent } from './components/review/review.componen;
-import { DiscussionDetailComponent } from './components/discussion-detail/discussion-detail.component't';
+import { ReviewComponent } from './components/review/review.component';
+import { DiscussionDetailComponent } from './components/discussion-detail/discussion-detail.component';
 
 @NgModule({
   declarations: [
@@ -28,8 +28,8 @@ import { DiscussionDetailComponent } from './components/discussion-detail/discus
     AccountComponent,
     DetailsComponent,
     MovieaddComponent,
-    ReviewCompone,
-    DiscussionDetailComponentnt
+    ReviewComponent,
+    DiscussionDetailComponent
   ],
   imports: [
     BrowserModule,
