@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../entities/User';
+import { Discussion } from '../entities/Discussion';
 
 @Injectable()
 export class UserService {
@@ -37,6 +38,15 @@ private url = '';
   getDiscussionById(id: string) {
       const url = this.url + '/api/discussions/' + id;
       return this.http.get(url);
+  }
+  
+  createDiscussion(subject: string) {
+      const url = this.url + '/api/discussions';
+      const disc = new Discussion();
+      disc.subject = subject;
+      return this.http.post(url, {
+          discussion: disc
+      });
   }
 
   postComment(id: string, username: string, comment: string) {

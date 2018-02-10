@@ -2,3 +2,10 @@
   <h2 (click)="openDiscussion(disc._id)">{{disc.subject}}</h2>
   <h2># of comments: {{disc.comments.length}}</h2>
 </div>
+
+<button *ngIf="!isAdding" (click)="addDiscussion()">Start a discussion</button>
+<div *ngIf="isAdding">
+  <input [(ngModel)]="subject" name="subject" placeholder="Subject">
+  <button (click)="createDiscussion()">Create Discussion</button>
+  <button (click)="cancel()">Cancel</button>
+</div>

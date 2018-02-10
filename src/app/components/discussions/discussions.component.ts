@@ -12,6 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class DiscussionsComponent implements OnInit {
 
   discussions: Discussion[];
+  subject: string;
+  isAdding: boolean;
 
   constructor(
     private userService: UserService,
@@ -29,6 +31,20 @@ export class DiscussionsComponent implements OnInit {
 
   openDiscussion(id: string) {
     this.router.navigate(['/discussion-detail', id]);
+  }
+
+  addDiscussion() {
+    this.isAdding = true;
+  }
+
+  createDiscussion() {
+    this.userService.createDiscussion(this.subject)
+        .subscribe(() => {});
+  }
+
+  cancel() {
+    this.subject = null;
+    this.isAdding = false;
   }
 }
 
