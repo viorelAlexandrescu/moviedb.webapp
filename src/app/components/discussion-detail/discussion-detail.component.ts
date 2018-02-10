@@ -25,7 +25,8 @@ export class DiscussionDetailComponent implements OnInit {
     this.route.params
         .switchMap((params: Params) => this.userService.getDiscussionById(params.id))
         .subscribe(data => {
-          this.discussion = data.discussion;
+          const d = data as any;
+          this.discussion = d.discussion;
         });
   }
 
@@ -35,7 +36,8 @@ export class DiscussionDetailComponent implements OnInit {
         .subscribe(() => {
           this.userService.getDiscussionById(id)
               .subscribe((data) => {
-                this.discussion = data.discussion;
+                const d = data as any;
+                this.discussion = d.discussion;
               });
         });
   }
