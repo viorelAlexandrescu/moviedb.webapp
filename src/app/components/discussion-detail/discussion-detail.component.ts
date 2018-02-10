@@ -17,7 +17,6 @@ export class DiscussionDetailComponent implements OnInit {
   constructor(
     private userService: UserService,
     private route: ActivatedRoute,
-    private location: Location,
     private router: Router
   ) { }
 
