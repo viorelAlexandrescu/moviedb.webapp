@@ -40,14 +40,15 @@ export class DiscussionDetailComponent implements OnInit {
       const id = this.discussion._id;
       this.userService.postComment(id, this.userService.getUsername(), this.comment)
           .subscribe(() => {
-            this.userService.getDiscussionById(id)
-                .subscribe((data) => {
-                  const d = data as any;
-                  this.discussion = d.discussion;
-                  console.log(this.discussion);
-              });
+            // this.userService.getDiscussionById(id)
+            //     .subscribe((data) => {
+            //       const d = data as any;
+            //       this.discussion = d.discussion;
+            //       this.isAdding = false;
+            //   });
+            this.isAdding = false;
+            this.ngOnInit();
         });
-      this.isAdding = false;
     }
   }
 
