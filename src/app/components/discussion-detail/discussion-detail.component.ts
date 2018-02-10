@@ -46,7 +46,8 @@ export class DiscussionDetailComponent implements OnInit {
             //       this.discussion = d.discussion;
             //       this.isAdding = false;
             //   });
-            this.isAdding = false;
+            this.cancel();
+            console.log('done posting');
             this.ngOnInit();
         });
     }
