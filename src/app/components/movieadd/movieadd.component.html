@@ -1,0 +1,20 @@
+<form>
+    <div class="form-group">
+        <label for="Url">Poster</label>
+        <input [(ngModel)]="coverUrl" name="coverUrl" type="url" class="form-control" id="Url" placeholder="Poster url">
+    </div>
+    <div class="form-group">
+      <label for="MovieTittle">Tittle</label>
+      <input [(ngModel)]="title" name="title" type="text" class="form-control" id="MovieTittle" placeholder="Tittle">
+    </div>
+    <div class="form-group">
+      <label for="Release_Date">Release Date</label>
+      <input [(ngModel)]="releaseDate" name="releaseDate" type="date" class="form-control" id="Release_Date" placeholder="Date">
+    </div>
+    <div class="form-group">
+        <label for="description">Details</label>
+        <textarea [(ngModel)]="description" name="description" class="form-control" id="details" rows="3"></textarea>
+    </div>
+  </form>
+
+  <button (click)="createMovie()">Create new movie</button>

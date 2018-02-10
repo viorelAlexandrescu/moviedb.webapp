@@ -1,51 +1,7 @@
-<!--  
-<div class="container">
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>picture</th>
-          <th>name</th>
-          <th>release_date</th>
-          <th>description</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-        <td *ngFor="let movie of movies">
-          <img src="{{movie.coverUrl}}" />
-          <h1>{{movie.title}}</h1>
-          <h1>{{movie.releaseDate}}</h1>
-        </td>
-
-        <td >
-        </td>img src=" " alt="Imagine">
-        </td>
-        <td>name</td>
-        <td>release_date</td>
-        <td>
-          <button type="button" class="btn btn-link">description</button>
-          <div class="col-sm-6" style="background-color: white;" align="center">
-             <img src=" " alt="imagine"></div>
-              <div class="col-sm-6" style="background-color: white;" align="center">
-                   <p>nume</p>
-                   <p>release_date</p>
-                   <button type="button" class="btn btn-link">details</button></div>
-        </td>
-     
-      </tbody>
-    </table>
+<div style="background-color: white;" align="center">
+  <div *ngFor="let movie of movies" class="card col-lg-4 col-sm-6 col-xs-12">
+    <a (click)="goToDetail(movie._id)">{{movie.title}}</a>
+    <img src="{{movie.coverUrl}}"/>
+    <h4>{{movie.releaseDate}}</h4>
   </div>
 </div>
- -->
-
- <ul>
-   <li *ngFor="let movie of movies">
-     <h1>{{movie.title}}</h1>
-     <img src="{{movie.coverUrl}}" />
-     <h4>{{movie.releaseDate}}</h4>
-     <p>{{movie.description}}</p>
-   </li>
- </ul>
-
- 

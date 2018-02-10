@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MovieService } from '../../services/movies.service';
 import { Movie } from '../../entities/Movie';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,10 @@ export class HomeComponent implements OnInit {
 
   private movies: Movie[];
 
-  constructor(private movieService: MovieService) { }
+  constructor(
+    private movieService: MovieService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     this.movieService.getMovies()
@@ -20,6 +24,11 @@ export class HomeComponent implements OnInit {
           const movieData = data as MovieList;
           this.movies = movieData.movies;
         });
+  }
+
+  goToDetail(id) {
+    console.log('going to detail/', id);
+    this.router.navigate(['/detail', id]);
   }
 }
 
