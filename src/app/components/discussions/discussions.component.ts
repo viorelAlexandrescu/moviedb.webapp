@@ -38,11 +38,15 @@ export class DiscussionsComponent implements OnInit {
   }
 
   createDiscussion() {
-    this.userService.createDiscussion(this.subject)
+    if (!this.userService.isLoggedIn()) {
+      this.router.navigate(['/account']);
+    } else {
+      this.userService.createDiscussion(this.subject)
         .subscribe(() => {
           this.isAdding = false;
         });
     this.ngOnInit();
+    }
   }
 
   cancel() {
