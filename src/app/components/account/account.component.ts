@@ -11,9 +11,9 @@ import { User } from '../../entities/User';
 })
 export class AccountComponent implements OnInit {
 
-  private username: string;
-  private password: string;
-  private showMessage: boolean;
+  username: string;
+  password: string;
+  showMessage: boolean;
 
   constructor(
     private router: Router,

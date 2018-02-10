@@ -16,8 +16,8 @@ import { Review } from '../../entities/Review';
 export class DetailsComponent implements OnInit {
 
   @Input() movie: Movie;
-  private rating: number;
-  private reviews: Review[];
+  rating: number;
+  reviews: Review[];
 
   constructor(
     private movieService: MovieService,

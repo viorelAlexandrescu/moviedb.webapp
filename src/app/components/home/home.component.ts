@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  private movies: Movie[];
+  movies: Movie[];
 
   constructor(
     private movieService: MovieService,

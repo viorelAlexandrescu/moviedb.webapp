@@ -11,10 +11,10 @@ import { Router } from '@angular/router';
 })
 export class MovieaddComponent implements OnInit {
 
-  private title: string;
-  private releaseDate: Date;
-  private description: string;
-  private coverUrl: string;
+  title: string;
+  releaseDate: Date;
+  description: string;
+  coverUrl: string;
 
   constructor(
     private movieService: MovieService,
