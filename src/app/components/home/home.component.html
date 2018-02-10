@@ -5,7 +5,7 @@
               <img style="margin: 0 auto;" src="{{movie.coverUrl}}"/>
               <div class="row">
                   <a (click)="goToDetail(movie._id)">{{movie.title}}</a>
-                  <h4>{{movie.releaseDate}}</h4>
+                  <h4>{{movie.releaseDate | date: 'dd.MM.yyyy'}}</h4>
               </div>
             </div>
           </div>
