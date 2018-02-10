@@ -12,8 +12,10 @@ export class UserService {
   login(user: User): Observable<any> {
       const url = this.url + '/api/login';
       return this.http.post(url, {
-          username: user.username,
-          password: user.password
+          user: {
+              username: user.username,
+              password: user.password
+          }
       });
   }
 }

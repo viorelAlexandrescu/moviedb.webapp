@@ -35,7 +35,7 @@ import { ReviewComponent } from './components/review/review.component';
     HttpClientModule,
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true }
+      { enableTracing: false }
     )
   ],
   providers: [MovieService, UserService],

@@ -22,6 +22,10 @@ export class MovieaddComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    const user = JSON.parse(localStorage.getItem('user'));
+     if (user === null || user.role !== 'Admin') {
+        this.router.navigate(['/account']);
+     }
   }
 
   createMovie() {

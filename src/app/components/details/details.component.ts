@@ -44,7 +44,12 @@ export class DetailsComponent implements OnInit {
    }
 
    addReview() {
-     this.router.navigate(['/review', this.movie._id]);
+     const user = localStorage.getItem('user');
+     if (user === null) {
+        this.router.navigate(['/account']);
+     } else {
+       this.router.navigate(['/review', this.movie._id]);
+     }
    }
 
    goBack() {

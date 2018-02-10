@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { User } from '../../entities/User';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,9 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   title = 'MovieDB';
+
+  getUser() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user === {} ? 'None' : user.username;
+  }
 }

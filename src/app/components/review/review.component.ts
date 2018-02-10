@@ -36,6 +36,7 @@ export class ReviewComponent implements OnInit {
 
   createReview() {
     const review = new Review();
+    review.username = JSON.parse(localStorage.getItem('user')).username;
     review.movieId = this.movie._id;
     review.review = this.review;
     review.rating = this.rating;

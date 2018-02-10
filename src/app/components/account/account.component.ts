@@ -27,14 +27,18 @@ export class AccountComponent implements OnInit {
     const user = new User();
     user.username = this.username;
     user.password = this.password;
-    console.log(user);
     this.userService.login(user)
-        .subscribe(success => {
-          if (success) {
-            this.showMessage = false;
+        .subscribe(payload => {
+          if (payload.success) {
+            console.log('login succesffuly');
+            const newUser = new User();
+            newUser.username = payload.user.username;
+            newUser._id = payload.user._id;
+            newUser.role = payload.user.role;
+            localStorage.setItem('user', JSON.stringify(newUser));
             this.goBack();
           } else {
-            this.showMessage = true;
+            console.log('login failed');
           }
         });
   }
