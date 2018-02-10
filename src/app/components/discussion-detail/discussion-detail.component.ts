@@ -27,6 +27,7 @@ export class DiscussionDetailComponent implements OnInit {
         .subscribe(data => {
           const d = data as any;
           this.discussion = d.discussion;
+          console.log(this.discussion);
         });
 
     this.isAdding = false;
@@ -43,6 +44,7 @@ export class DiscussionDetailComponent implements OnInit {
                 .subscribe((data) => {
                   const d = data as any;
                   this.discussion = d.discussion;
+                  console.log(this.discussion);
               });
         });
       this.isAdding = false;
