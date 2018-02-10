@@ -26,8 +26,7 @@ private url = '';
 
   getUsername() {
     const user = JSON.parse(localStorage.getItem('user'));
-    console.log('user is ', user);
-    return user === {} ? 'None' : user.username;
+    return user === null ? 'None' : user.username;
   }
 
   getDiscussions() {
