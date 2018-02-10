@@ -50,4 +50,6 @@ export class MovieService {
     const url = this.url + '/api/reviews/' + id;
     return this.http.get(url);
   }
+
+  
 }

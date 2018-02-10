@@ -43,6 +43,18 @@ export class AccountComponent implements OnInit {
         });
   }
 
+  isLoggedIn() {
+    const user = localStorage.getItem('user');
+    if (user === null) {
+      return false;
+    }
+    return true;
+  }
+
+  getUsername() {
+    return JSON.parse(localStorage.getItem('user')).username;
+  }
+
   goBack() {
     this.router.navigate(['/']);
   }

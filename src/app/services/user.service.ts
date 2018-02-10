@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { User } from '../entities/User';
+import { userInfo } from 'os';
 
 @Injectable()
 export class UserService {
@@ -17,6 +18,33 @@ private url = '';
               username: user.username,
               password: user.password
           }
+      });
+  }
+
+  logout() {
+      localStorage.removeItem('user');
+  }
+
+  getUsername() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    return user === {} ? 'None' : user.username;
+  }
+
+  getDiscussions() {
+      const url = this.url + '/api/discussions';
+      return this.http.get(url);
+  }
+
+  getDiscussionById(id: string) {
+      const url = this.url + '/api/discussions/' + id;
+      return this.http.get(url);
+  }
+
+  postComment(id: string, username: string, comment: string) {
+    const url = this.url + '/api/discussions/' + id;
+      return this.http.post(url, {
+          comment : comment,
+          username: username
       });
   }
 }

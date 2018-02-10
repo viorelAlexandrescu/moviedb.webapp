@@ -1,3 +1,4 @@
-<p>
-  discussions works!
-</p>
+<div *ngFor="let disc of discussions">
+  <h2 (click)="openDiscussion(disc._id)">{{disc.subject}}</h2>
+  <h2># of comments: {{disc.comments.length}}</h2>
+</div>

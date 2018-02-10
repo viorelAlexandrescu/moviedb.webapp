@@ -16,7 +16,8 @@ import { appRoutes } from './app.routes';
 import { DetailsComponent } from './components/details/details.component';
 import { MovieaddComponent } from './components/movieadd/movieadd.component';
 import { UserService } from './services/user.service';
-import { ReviewComponent } from './components/review/review.component';
+import { ReviewComponent } from './components/review/review.componen;
+import { DiscussionDetailComponent } from './components/discussion-detail/discussion-detail.component't';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ReviewComponent } from './components/review/review.component';
     AccountComponent,
     DetailsComponent,
     MovieaddComponent,
-    ReviewComponent
+    ReviewCompone,
+    DiscussionDetailComponentnt
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { User } from '../../entities/User';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +11,13 @@ import { User } from '../../entities/User';
 export class AppComponent {
   title = 'MovieDB';
 
+  constructor(
+    private userService: UserService) { }
   getUser() {
-    const user = JSON.parse(localStorage.getItem('user'));
-    return user === {} ? 'None' : user.username;
+    return this.userService.getUsername;
+  }
+
+  logout() {
+    this.userService.logout();
   }
 }

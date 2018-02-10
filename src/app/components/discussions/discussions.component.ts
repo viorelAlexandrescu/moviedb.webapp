@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Discussion } from '../../entities/Discussion';
+import { UserService } from '../../services/user.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-discussions',
@@ -8,9 +11,28 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class DiscussionsComponent implements OnInit {
 
-  constructor() { }
+  discussions: Discussion[];
+
+  constructor(
+    private userService: UserService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.userService.getDiscussions()
+        .subscribe(data => {
+          const discussions = data as DiscussionList;
+          this.discussions = discussions.discussions;
+        });
   }
 
+  openDiscussion(id: string) {
+    this.router.navigate(['/discussion-detail', id]);
+  }
 }
+
+class DiscussionList {
+  discussions: Discussion[];
+}
+
