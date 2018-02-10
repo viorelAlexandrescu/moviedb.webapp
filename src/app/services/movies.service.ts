@@ -6,7 +6,8 @@ import { Review } from '../entities/Review';
 
 @Injectable()
 export class MovieService {
-  private url = 'http://192.168.100.6:5000';
+  // private url = 'http://192.168.100.6:5000';
+  private url = 'localhost:5000';
 
   constructor(private http: HttpClient) { }
 
