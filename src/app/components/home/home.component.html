@@ -2,9 +2,11 @@
     <div class="row">
         <div class="card-group" style="background-color: white;" align="center">
             <div *ngFor="let movie of movies" class="card col-lg-4 col-sm-6 col-xs-12">
-              <a (click)="goToDetail(movie._id)">{{movie.title}}</a>
-              <img src="{{movie.coverUrl}}"/>
-              <h4>{{movie.releaseDate}}</h4>
+              <img style="margin: 0 auto;" src="{{movie.coverUrl}}"/>
+              <div class="row">
+                  <a (click)="goToDetail(movie._id)">{{movie.title}}</a>
+                  <h4>{{movie.releaseDate}}</h4>
+              </div>
             </div>
           </div>
     </div>
