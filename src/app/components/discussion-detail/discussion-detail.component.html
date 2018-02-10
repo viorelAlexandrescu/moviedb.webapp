@@ -6,7 +6,7 @@
   </span>
 </ol>
 
-<button *ngIf="!isAdding" (click)="show">Start a discussion</button>
+<button *ngIf="!isAdding" (click)="show()">Post a comment</button>
 <div *ngIf="isAdding">
   <input [(ngModel)]="comment" name="comment" placeholder="Your comment">
   <button (click)="addComment()">POST!</button>
