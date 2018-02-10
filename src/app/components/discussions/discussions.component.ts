@@ -40,6 +40,7 @@ export class DiscussionsComponent implements OnInit {
   createDiscussion() {
     this.userService.createDiscussion(this.subject)
         .subscribe(() => {});
+    this.isAdding = false;
   }
 
   cancel() {

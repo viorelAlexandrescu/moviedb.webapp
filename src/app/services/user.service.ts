@@ -39,7 +39,7 @@ private url = '';
       const url = this.url + '/api/discussions/' + id;
       return this.http.get(url);
   }
-  
+
   createDiscussion(subject: string) {
       const url = this.url + '/api/discussions';
       const disc = new Discussion();
