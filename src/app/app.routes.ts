@@ -15,7 +15,7 @@ export const appRoutes: Routes = [
   { path: 'movieadd', component: MovieaddComponent },
   { path: 'review/:id', component: ReviewComponent },
   { path: 'detail/:id', component: DetailsComponent },
-  { path: 'discussions-details/:id', component: DiscussionDetailComponent },
+  { path: 'discussion-detail/:id', component: DiscussionDetailComponent },
   { path: '',
     redirectTo: '/home',
     pathMatch: 'full'

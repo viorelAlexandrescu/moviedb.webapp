@@ -24,7 +24,7 @@ export class DiscussionsComponent implements OnInit {
   ngOnInit() {
     this.userService.getDiscussions()
         .subscribe(data => {
-          const discussions = data as DiscussionList;
+          const discussions = data as any;
           this.discussions = discussions.discussions;
         });
   }
@@ -39,17 +39,15 @@ export class DiscussionsComponent implements OnInit {
 
   createDiscussion() {
     this.userService.createDiscussion(this.subject)
-        .subscribe(() => {});
-    this.isAdding = false;
+        .subscribe(() => {
+          this.isAdding = false;
+        });
+    this.ngOnInit();
   }
 
   cancel() {
     this.subject = null;
     this.isAdding = false;
   }
-}
-
-class DiscussionList {
-  discussions: Discussion[];
 }
 
