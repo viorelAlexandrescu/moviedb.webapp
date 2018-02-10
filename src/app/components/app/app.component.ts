@@ -21,4 +21,12 @@ export class AppComponent {
   logout() {
     this.userService.logout();
   }
+
+  isLogged() {
+    const user = this.userService.getUsername();
+    if (user === 'None') {
+      return false;
+    }
+    return true;
+  }
 }
