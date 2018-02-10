@@ -33,15 +33,19 @@ export class DiscussionDetailComponent implements OnInit {
   }
 
   addComment() {
-    const id = this.discussion._id;
-    this.userService.postComment(id, this.userService.getUsername(), this.comment)
-        .subscribe(() => {
-          this.userService.getDiscussionById(id)
+    if (!this.userService.isLoggedIn()) {
+      this.router.navigate(['/account']);
+    } else {
+      const id = this.discussion._id;
+      this.userService.postComment(id, this.userService.getUsername(), this.comment)
+          .subscribe(() => {
+            this.userService.getDiscussionById(id)
               .subscribe((data) => {
                 const d = data as any;
                 this.discussion = d.discussion;
               });
         });
+    }
   }
 
   show() {

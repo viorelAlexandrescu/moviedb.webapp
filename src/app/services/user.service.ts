@@ -30,6 +30,10 @@ private url = '';
     return user === null ? 'None' : user.username;
   }
 
+  isLoggedIn() {
+      return this.getUsername() === 'Node' ? false : true;
+  }
+
   getDiscussions() {
       const url = this.url + '/api/discussions';
       return this.http.get(url);
