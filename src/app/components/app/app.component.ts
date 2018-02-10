@@ -13,8 +13,9 @@ export class AppComponent {
 
   constructor(
     private userService: UserService) { }
+
   getUser() {
-    return this.userService.getUsername;
+    return this.userService.getUsername();
   }
 
   logout() {
