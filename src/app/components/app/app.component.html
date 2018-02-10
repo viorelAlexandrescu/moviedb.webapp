@@ -6,8 +6,8 @@
       <ul class="nav navbar-nav">
         <li><a class="active" routerLink="/home" routerLinkActive="active">Home</a></li>
         <li><a routerLink="/discussions" routerLinkActive="active">Discussions</a></li>
-        <li><a routerLink="/account" routerLinkActive="active">Account</a></li>
-        <li><a routerLink="/movieadd" routerLinkActive="active">Add</a></li>
+        <li><a routerLink="/account" routerLinkActive="active">Account details</a></li>
+        <li><a routerLink="/movieadd" routerLinkActive="active">Add a movie</a></li>
         <li><a>Username: {{getUser()}}</a></li>
         <li *ngIf="isLogged()"><a (click)="logout()">Logout</a></li>
       </ul>

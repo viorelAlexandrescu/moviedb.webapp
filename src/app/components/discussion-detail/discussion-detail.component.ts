@@ -14,6 +14,7 @@ export class DiscussionDetailComponent implements OnInit {
   @Input() discussion: Discussion;
   comment: string;
   isAdding: boolean;
+  areThereComments: boolean;
 
   constructor(
     private userService: UserService,
@@ -22,15 +23,17 @@ export class DiscussionDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.isAdding = false;
+    this.areThereComments = false;
     this.route.params
         .switchMap((params: Params) => this.userService.getDiscussionById(params.id))
         .subscribe(data => {
           const d = data as any;
           this.discussion = d.discussion;
-          console.log(this.discussion);
+          if (this.discussion.comments){
+            this.areThereComments = true;
+          }
         });
-
-    this.isAdding = false;
   }
 
   addComment() {
@@ -51,13 +54,6 @@ export class DiscussionDetailComponent implements OnInit {
             this.ngOnInit();
         });
     }
-  }
-
-  areThereComments() {
-    if (this.discussion.comments !== undefined) {
-      return true;
-    }
-    return false;
   }
 
   show() {

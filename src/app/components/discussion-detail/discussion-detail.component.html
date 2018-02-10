@@ -1,5 +1,5 @@
 <h1>{{discussion.subject}}</h1>
-<div *ngIf="areThereComments()">
+<div *ngIf="areThereComments">
   <ol *ngFor="let comm of discussion.comments">
     <span>
       <h3>{{comm.user}}</h3>
@@ -7,7 +7,7 @@
     </span>
   </ol>
 </div>
-<h2 *ngIf="!areThereComments()">No comments yet...</h2>
+<h2 *ngIf="!areThereComments">No comments yet...</h2>
 
 <button *ngIf="!isAdding" (click)="show()">Post a comment</button>
 <div *ngIf="isAdding">
