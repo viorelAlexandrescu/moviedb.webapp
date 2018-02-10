@@ -31,7 +31,7 @@ private url = '';
   }
 
   isLoggedIn() {
-      return this.getUsername() === 'Node' ? false : true;
+      return this.getUsername() !== 'None' ? true : false;
   }
 
   getDiscussions() {

@@ -40,12 +40,20 @@ export class DiscussionDetailComponent implements OnInit {
       this.userService.postComment(id, this.userService.getUsername(), this.comment)
           .subscribe(() => {
             this.userService.getDiscussionById(id)
-              .subscribe((data) => {
-                const d = data as any;
-                this.discussion = d.discussion;
+                .subscribe((data) => {
+                  const d = data as any;
+                  this.discussion = d.discussion;
               });
         });
+      this.isAdding = false;
     }
+  }
+
+  areThereComments() {
+    if (this.discussion.comments !== undefined) {
+      return true;
+    }
+    return false;
   }
 
   show() {

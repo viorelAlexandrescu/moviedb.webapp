@@ -1,10 +1,11 @@
 <h1>{{discussion.subject}}</h1>
-<ol *ngFor="let comm of discussion.comments">
+<ol *ngIf="areThereComments()" *ngFor="let comm of discussion.comments">
   <span>
     <h3>{{comm.user}}</h3>
     <p>{{comm.comment}}</p>
   </span>
 </ol>
+<h2 *ngIf="!areThereComments()">No comments yet...</h2>
 
 <button *ngIf="!isAdding" (click)="show()">Post a comment</button>
 <div *ngIf="isAdding">
